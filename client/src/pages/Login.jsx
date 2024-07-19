@@ -1,3 +1,4 @@
+import {useSelector} from "react-redux";
 import React, {useEffect} from "react";
 import {useForm} from "react-hook-form";
 import {useNavigate} from "react-router-dom";
@@ -5,7 +6,7 @@ import Textbox from "../components/Textbox";
 import Button from "../components/Button";
 
 const Login = () => {
-  const user = "";
+  const {user} = useSelector((state) => state.auth);
   const {
     register,
     handleSubmit,
@@ -15,7 +16,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   const submitHandler = async (data) => {
-    console.log(data);
+    console.log("submit");
   };
 
   useEffect(() => {
